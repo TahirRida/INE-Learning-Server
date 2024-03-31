@@ -1,0 +1,166 @@
+{
+	"info": {
+		"_postman_id": "0cf28ea0-23b0-4168-8e34-bc7a0e3cc738",
+		"name": "Authentication",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\" : \"moderator\",\n    \"email\" : \"moderator@email.com\",\n    \"password\" : \"123456789\",\n    \"roles\" : [\n        \"user\", \"mod\"\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/auth/signup",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\" : \"moderator\",\n    \"password\" : \"123456789\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/auth/signin",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/test/all",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"test",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test user",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtb2RlcmF0b3IiLCJpYXQiOjE1OTE5MjIzMDAsImV4cCI6MTU5MjAwODcwMH0.K6m9Y1pQdhqysRzm5pGs113XHVeS3qjTRjFwpL8QDRDs2ztsfbjEYGqirVF6PZxt-_YXSV2E-yuTUz2k-D7Xmw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/api/test/user",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"test",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test mod",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtb2RlcmF0b3IiLCJpYXQiOjE1OTE5MjIzMDAsImV4cCI6MTU5MjAwODcwMH0.K6m9Y1pQdhqysRzm5pGs113XHVeS3qjTRjFwpL8QDRDs2ztsfbjEYGqirVF6PZxt-_YXSV2E-yuTUz2k-D7Xmw"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/api/test/mod",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"test",
+						"mod"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test admin",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtb2RlcmF0b3IiLCJpYXQiOjE1OTE5MjIzMDAsImV4cCI6MTU5MjAwODcwMH0.K6m9Y1pQdhqysRzm5pGs113XHVeS3qjTRjFwpL8QDRDs2ztsfbjEYGqirVF6PZxt-_YXSV2E-yuTUz2k-D7Xmw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/api/test/admin",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"test",
+						"admin"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
