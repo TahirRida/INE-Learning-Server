@@ -96,21 +96,7 @@ public class CourseController {
     }
     //DELETE
     @DeleteMapping("/{courseId}")
-    public ResponseEntity<String> deleteCourse(@PathVariable String courseId, @AuthenticationPrincipal UserDetails userDetails) {
-        // Get the username of the authenticated user
-        String username = userDetails.getUsername();
-
-        // Check if the user has admin role
-        boolean isAdmin = userDetails.getAuthorities().stream()
-                .anyMatch(role -> role.getAuthority().equals("ROLE_ADMIN"));
-
-        // Check if the course belongs to the user or the user is admin
-        boolean isCourseOwner = courseService.isCourseOwner(username, courseId);
-
-        if (isCourseOwner || isAdmin) {
+    public ResponseEntity<String> deleteCourse(@PathVariable String courseId) {
             courseService.deleteCourse(courseId);
             return ResponseEntity.status(HttpStatus.OK).body("Sucess");
-        } else {
-            return ResponseEntity.status(HttpStatus.FORBIDDEN).body("You are not authorized to perform this operation");
-        }
     }}
